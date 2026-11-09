@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#103b32">
+<meta name="description" content="Assistente financeiro para planejar uma viagem, com dados fictícios consultados por MCP.">
+<title>Banco na Viagem · Assistente financeiro MCP</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Conversas e filtros">
+    <div class="brand"><span class="mark" aria-hidden="true">BV</span><div><strong>Banco na Viagem</strong><small>Assistente de planejamento</small></div></div>
+    <button class="new" id="new" type="button"><span aria-hidden="true">＋</span> Nova conversa</button>
+    <div class="sidebar-title">Conversas neste dispositivo</div>
+    <nav id="history" class="history" aria-label="Histórico local"></nav>
+    <details class="filters" open>
+      <summary>Filtrar consultas</summary>
+      <label for="account">Conta</label><select id="account"><option value="">Todas as contas</option></select>
+      <label for="category">Categoria</label><select id="category"><option value="">Todas as categorias</option></select>
+      <div class="dates"><div><label for="from">De</label><input id="from" type="date"></div><div><label for="to">Até</label><input id="to" type="date"></div></div>
+      <button id="clear-filters" class="reset" type="button">Limpar filtros</button>
+    </details>
+    <button id="clear-history" class="clear-history" type="button">Limpar histórico local</button>
+    <div class="sidebar-note">Projeto educacional · DIO Bradesco</div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button id="toggle-sidebar" class="icon-btn mobile" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Abrir conversas e filtros">☰</button>
+      <div class="top-heading"><span class="top-eyebrow">Planejamento de viagem</span><strong>Seu assistente financeiro</strong></div>
+      <button id="about" class="status" type="button"><span aria-hidden="true"></span>Demonstração <b aria-hidden="true">ⓘ</b></button>
+    </header>
+    <section id="thread" class="thread" aria-label="Conversa" aria-live="polite" aria-relevant="additions text"></section>
+    <div class="composer-wrap">
+      <form id="composer" class="composer">
+        <label class="sr-only" for="message">Sua pergunta</label>
+        <textarea id="message" rows="2" maxlength="400" placeholder="Ex.: quanto gastei com alimentação?" required></textarea>
+        <button id="send" class="send" type="submit">Enviar <span aria-hidden="true">↑</span></button>
+      </form>
+      <div class="composer-note">Dados fictícios em USD · 01–25 set. 2026 · Não informe dados pessoais.</div>
+    </div>
+  </main>
+</div>
+<dialog id="about-dialog">
+  <div class="dialog-head"><h2>Como esta demonstração funciona</h2><button type="button" id="close-about" class="icon-btn" aria-label="Fechar">×</button></div>
+  <p>As perguntas são encaminhadas por regras a ferramentas de consulta MCP. O servidor e os dados de teste rodam no navegador, em memória.</p>
+  <p>O recorte fixo é de 01 a 25 de setembro de 2026, em dólares americanos. A demonstração usa contas inventadas e não realiza operações bancárias.</p>
+  <p>O histórico fica apenas neste dispositivo e pode ser limpo no menu lateral.</p>
+</dialog>
+</body>
+</html>
