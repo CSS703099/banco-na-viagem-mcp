@@ -50,3 +50,9 @@ args = ["/caminho/absoluto/banco-na-viagem/mcp-server.mjs"]
 - [Especificação para Lovable](docs/openspec-lovable.md), com as diferenças da implementação. O código desta versão foi construído diretamente e a especificação pode ser reutilizada no Lovable.
 - [Evidências das consultas e dos testes](docs/evidencias.md).
 - [Enunciado na DIO](https://web.dio.me/lab/levando-o-banco-para-onde-o-cliente-ja-esta-um-agente-financeiro-com-mcp/learning/6636d9c7-b6d4-464f-9bca-c65f1c7e8627?back=/track/bradesco-agentes-de-ia-do-zero-a-pratica).
+
+## Validação automática no GitHub
+
+[![Testes e build](https://github.com/CSS703099/banco-na-viagem-mcp/actions/workflows/tests.yml/badge.svg)](https://github.com/CSS703099/banco-na-viagem-mcp/actions/workflows/tests.yml)
+
+**3 testes aprovados e build concluído** no Node.js 22, na [execução 43984769681](https://github.com/CSS703099/banco-na-viagem-mcp/actions/runs/43984769681), commit `38d3ab8d880519ea77c9b5683225186ce38abbfb`. A suíte cobre MCP em memória, servidor STDIO e roteamento de intenções. Usa dados fictícios locais; não acessa contas bancárias, Pluggy, Plaid ou um LLM. O build não comprova que a hospedagem pública está acessível.
